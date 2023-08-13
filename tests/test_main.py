@@ -1,5 +1,5 @@
 import pytest
-from aiogram import Bot, types
+from aiogram import Bot
 from aiogram.utils import exceptions
 import asyncio
 import os
@@ -17,6 +17,7 @@ def event_loop():
     yield loop
     loop.close()
 
+
 # Фикстура для создания инстанса бота, который будет использоваться в тестах
 @pytest.fixture(scope='module')
 def bot():
@@ -24,7 +25,8 @@ def bot():
     bot = Bot(token=TOKEN)
     return bot
 
-# Пример теста, который отправляет сообщение и проверяет, что бот его успешно обработал
+
+# Пример теста, который отправляет сообщение и проверяет, что бот его успешно
 @pytest.mark.asyncio
 async def test_send_message(bot):
     chat_id = CHAT_ID  # Замените на действительный ID чата

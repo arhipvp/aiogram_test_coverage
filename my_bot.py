@@ -27,4 +27,3 @@ async def echo_handler(message: types.Message) -> None:
         await message.send_copy(chat_id=message.chat.id)
     except TypeError:
         await message.answer("Nice try!")
-
