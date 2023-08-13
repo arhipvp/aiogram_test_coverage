@@ -6,8 +6,8 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-TOKEN = os.getenv('BOT_TOKEN')
-CHAT_ID = os.getenv('API_ID')
+BOT_TOKEN = os.getenv('BOT_TOKEN')
+API_ID = os.getenv('API_ID')
 
 
 # Фикстура для запуска цикла событий asyncio внутри теста
@@ -22,19 +22,19 @@ def event_loop():
 @pytest.fixture(scope='module')
 def bot():
     # Здесь необходимо указать токен вашего бота
-    bot = Bot(token=TOKEN)
+    bot = Bot(token=BOT_TOKEN)
     return bot
 
 
 # Пример теста, который отправляет сообщение и проверяет, что бот его успешно
 @pytest.mark.asyncio
 async def test_send_message(bot):
-    chat_id = CHAT_ID  # Замените на действительный ID чата
+    chat_id = API_ID  # Замените на действительный ID чата
     message_text = "Привет, мир! Это тестовое сообщение от бота."
 
     try:
         await bot.send_message(chat_id, message_text)
-        assert True  # Успешно отправлено
+#        assert True  # Успешно отправлено
     except exceptions.BotBlocked:
         pytest.fail("Бот заблокирован пользователем")
     except exceptions.ChatNotFound:
