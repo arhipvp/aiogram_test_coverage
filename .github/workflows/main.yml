@@ -21,6 +21,9 @@ jobs:
 
       - name: Run Tests
         run: pytest
+        env:
+          BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+          API_ID: ${{ secrets.API_ID }}
 
       - name: Test flake8
         run: |
