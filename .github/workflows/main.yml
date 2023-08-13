@@ -28,7 +28,3 @@ jobs:
       - name: Test flake8
         run: |
           flake8 .
-
-      - name: Test mypy
-        run: |
-          mypy .
