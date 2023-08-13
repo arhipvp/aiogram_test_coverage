@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Install Dependencies
-        run: npm install  # Измените на ваш способ установки зависимостей
+        run: pip install -r requirements.txt
 
       - name: Run Tests
-        run: npm test  # Измените на ваш способ запуска тестов
+        run: pytest
