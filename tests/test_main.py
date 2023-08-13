@@ -6,8 +6,8 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-TOKEN = os.getenv('TELEGRAM_TOKEN')
-CHAT_ID = os.getenv('CHAT_ID')
+TOKEN = os.getenv('BOT_TOKEN')
+CHAT_ID = os.getenv('API_ID')
 
 
 # Фикстура для запуска цикла событий asyncio внутри теста
